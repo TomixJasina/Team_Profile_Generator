@@ -92,7 +92,6 @@ const internQuestions = [
         name: 'school',
     }
 ];
-
 async function createManager() {
     try {
         console.log("Adding manager:");
@@ -108,7 +107,6 @@ async function createManager() {
 
    await showMenu();
 }   
-
 async function showMenu() {
     try {
         const userResponse = await inquirer.prompt(menuQuestions);
@@ -125,4 +123,19 @@ async function showMenu() {
     } catch(error) {
         console.log(error);
     }
+}
+async function createEngineer(){
+    try {
+        console.log("Adding enginner:");
+        const userResponses = await inquirer.prompt(engineerQuestions);
+
+        const engineer = new Engineer(userResponses.name, userResponses.id, userResponses.email, userResponses.github);
+
+        employees.push(engineer);
+
+    }   catch(error) {
+        console.log(error);
+    }
+
+    await showMenu();
 }
