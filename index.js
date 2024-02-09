@@ -166,3 +166,9 @@ function writeToFile() {
 
     console.log("`team.html` has been created successfully")
 }
+async function main(){
+    await createManager();
+    writeToFile();
+}
+
+main();
