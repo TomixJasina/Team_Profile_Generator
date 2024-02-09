@@ -37,3 +37,35 @@ const managerQuestions = [
         name: 'officeNumber',
     }
 ];
+
+const menuQuestions = [
+    {
+        type: 'list',
+        message: "What to do next?",
+        choices: ['Do you want to add an engineer?', ' Do you want to add an intern?', 'Do you want to finish building the team?'],
+        name: 'menu'
+    }
+];
+
+const engineerQuestions = [
+    {
+        type: 'input',
+        message: "What is your name?",
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: "What is your ID?",
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: "What is your email?",
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: "What is your GitHub username?",
+        name: 'github',
+    }
+];
