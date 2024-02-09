@@ -42,7 +42,7 @@ const menuQuestions = [
     {
         type: 'list',
         message: "What to do next?",
-        choices: ['Do you want to add an engineer?', ' Do you want to add an intern?', 'Do you want to finish building the team?'],
+        choices: ['Do you want to add an engineer?', 'Do you want to add an intern?', 'Do you want to finish building the team?'],
         name: 'menu'
     }
 ];
@@ -92,6 +92,7 @@ const internQuestions = [
         name: 'school',
     }
 ];
+
 async function createManager() {
     try {
         console.log("Adding manager:");
@@ -107,14 +108,15 @@ async function createManager() {
 
    await showMenu();
 }   
+
 async function showMenu() {
     try {
         const userResponse = await inquirer.prompt(menuQuestions);
         switch (userResponse.menu) {
-            case "Add an engineer?":
+            case 'Do you want to add an engineer?':
                 await createEngineer();
                 break;
-            case 'Add an intern?':   
+            case 'Do you want to add an intern?':   
                 await createIntern();
                 break;
             default:
@@ -163,12 +165,11 @@ function writeToFile() {
         fs.mkdirSync(OUTPUT_DIR);
         fs.writeFileSync(outputPath, render(employees))
     }
-
-    console.log("`team.html` has been created successfully")
 }
 async function main(){
     await createManager();
     writeToFile();
+    console.log("`team.html` has been created successfully")
 }
 
 main();
