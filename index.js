@@ -155,3 +155,14 @@ async function createIntern(){
 
    await showMenu();
 }
+
+function writeToFile() {
+    if(fs.existsSync(OUTPUT_DIR)) {
+        fs.writeFileSync(outputPath, render(employees))
+    } else {
+        fs.mkdirSync(OUTPUT_DIR);
+        fs.writeFileSync(outputPath, render(employees))
+    }
+
+    console.log("`team.html` has been created successfully")
+}
