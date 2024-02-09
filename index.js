@@ -92,3 +92,19 @@ const internQuestions = [
         name: 'school',
     }
 ];
+
+async function createManager() {
+    try {
+        console.log("Adding manager:");
+        const userResponses = await inquirer.prompt(managerQuestions);
+
+        const manager = new Manager(userResponses.name, userResponses.id, userResponses.email, userResponses.officeNumber);
+
+        employees.push(manager);
+
+    }   catch(error) {
+        console.log(error);
+    }
+
+   await showMenu();
+}   
