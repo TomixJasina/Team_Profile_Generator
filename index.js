@@ -69,3 +69,26 @@ const engineerQuestions = [
         name: 'github',
     }
 ];
+
+const internQuestions = [
+    {
+        type: 'input',
+        message: "What is your name?",
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: "What is your ID",
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: "What is your email?",
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: "What is name of your school?",
+        name: 'school',
+    }
+];
