@@ -108,3 +108,21 @@ async function createManager() {
 
    await showMenu();
 }   
+
+async function showMenu() {
+    try {
+        const userResponse = await inquirer.prompt(menuQuestions);
+        switch (userResponse.menu) {
+            case "Add an engineer?":
+                await createEngineer();
+                break;
+            case 'Add an intern?':   
+                await createIntern();
+                break;
+            default:
+                writeToFile();
+        }
+    } catch(error) {
+        console.log(error);
+    }
+}
