@@ -139,3 +139,19 @@ async function createEngineer(){
 
     await showMenu();
 }
+
+async function createIntern(){
+    try {
+        console.log("Adding intern:");
+        const userResponses = await inquirer.prompt(internQuestions);
+
+        const intern = new Intern(userResponses.name, userResponses.id, userResponses.email, userResponses.school);
+
+        employees.push(intern);
+
+    }   catch(error) {
+        console.log(error);
+    }
+
+   await showMenu();
+}
