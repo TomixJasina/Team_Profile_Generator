@@ -10,10 +10,9 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
 const employees = [];
+
+// Definitions of questions for manager, engineer, intern and menu items
 
 const managerQuestions = [
     {
@@ -93,6 +92,7 @@ const internQuestions = [
     }
 ];
 
+// Function to creater manager details
 async function createManager() {
     try {
         console.log("Adding manager:");
@@ -109,6 +109,7 @@ async function createManager() {
    await showMenu();
 }   
 
+// Function to add new employee
 async function showMenu() {
     try {
         const userResponse = await inquirer.prompt(menuQuestions);
@@ -126,6 +127,8 @@ async function showMenu() {
         console.log(error);
     }
 }
+
+// Function to creater engineer details
 async function createEngineer(){
     try {
         console.log("Adding enginner:");
@@ -142,6 +145,7 @@ async function createEngineer(){
     await showMenu();
 }
 
+// Function to creater intern details
 async function createIntern(){
     try {
         console.log("Adding intern:");
@@ -158,6 +162,7 @@ async function createIntern(){
    await showMenu();
 }
 
+// Create a new `team.html` file
 function writeToFile() {
     if(fs.existsSync(OUTPUT_DIR)) {
         fs.writeFileSync(outputPath, render(employees))
@@ -166,6 +171,7 @@ function writeToFile() {
         fs.writeFileSync(outputPath, render(employees))
     }
 }
+
 async function main(){
     await createManager();
     writeToFile();
