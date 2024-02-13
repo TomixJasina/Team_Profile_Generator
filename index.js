@@ -19,21 +19,25 @@ const managerQuestions = [
         type: 'input',
         message: "What is your name?",
         name: 'name',
+        default: 'John Smith'
     },
     {
         type: 'input',
         message: "What is your ID?",
         name: 'id',
+        default: '1'
     },
     {
         type: 'input',
         message: "What is your email?",
         name: 'email',
+        default: '<EMAIL>'
     },
     {
         type: 'input',
         message: "What is your office number?",
         name: 'officeNumber',
+        default: '100-200-300'
     }
 ];
 
@@ -51,21 +55,25 @@ const engineerQuestions = [
         type: 'input',
         message: "What is your name?",
         name: 'name',
+        default: 'Tom Smith'
     },
     {
         type: 'input',
         message: "What is your ID?",
         name: 'id',
+        default: '2'
     },
     {
         type: 'input',
         message: "What is your email?",
         name: 'email',
+        default: '<EMAIL>'
     },
     {
         type: 'input',
         message: "What is your GitHub username?",
         name: 'github',
+        default: 'TomSmith'
     }
 ];
 
@@ -74,21 +82,25 @@ const internQuestions = [
         type: 'input',
         message: "What is your name?",
         name: 'name',
+        default: 'Jane Smith'
     },
     {
         type: 'input',
         message: "What is your ID",
         name: 'id',
+        default: '3'
     },
     {
         type: 'input',
         message: "What is your email?",
         name: 'email',
+        default: '<EMAIL>'
     },
     {
         type: 'input',
         message: "What is name of your school?",
         name: 'school',
+        default: 'UofT'
     }
 ];
 
